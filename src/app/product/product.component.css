@@ -1,14 +1,14 @@
 .productbox {
   display: flexbox;
-  margin-top: 10px;
+  margin-top: 4rem;
   background-color: rgb(0, 255, 255);
   border-radius: 50px;
-  padding-left: 40px;
-  min-width: 50%;
-  max-width: 75%;
+  padding-left: 5rem;
+  min-width: 30rem;
+  max-width: 60rem;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap:nowrap;
 }
 img {
-  width: 10%;
+  width: 10rem;
 }
