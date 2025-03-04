@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Product } from './types/Product';
+import { CommonModule } from '@angular/common';
+import { ProductComponent } from './product/product.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule, ProductComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -13,7 +16,7 @@ export class AppComponent {
 
   //perper API
 
-  productData: any;
+  productData: Product[] = [];
 
   constructor(private httpClient: HttpClient) {}
 
@@ -22,8 +25,8 @@ export class AppComponent {
     console.log('Hello world :)');
 
     this.httpClient
-      .get('https://fakestoreapi.com/products')
-      .subscribe((respones) => {
+      .get<Product[]>('https://fakestoreapi.com/products')
+      .subscribe((respones: Product[]) => {
         this.productData = respones;
       });
   }

@@ -1,1 +1,10 @@
-<p>product works!</p>
+<main class="productbox">
+  <img src="{{ item.image }}" alt="" />
+  <h3>{{ item.title }}</h3>
+  <p>{{ item.description }}</p>
+  <p>{{ item.price }}</p>
+  <p>{{ item.category }}</p>
+
+  <p>{{ item.rating.count }}</p>
+  <p>{{ item.rating.rate }}</p>
+</main>
